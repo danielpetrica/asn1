@@ -173,7 +173,7 @@ class Timestamp
      */
     public static function generateRequestFromFile($path, $nonce = true, $requireCert = false, $alg = 'sha1', $policy = null)
     {
-        return static::generateRequestFromData(file_get_contents($path), $none, $requireCert, $alg, $policy);
+        return static::generateRequestFromData(file_get_contents($path), $nonce, $requireCert, $alg, $policy);
     }
     /**
      * Generate a timestamp request (tsq) for a string
@@ -196,7 +196,7 @@ class Timestamp
         if (!$nonce) {
             $nonce = null;
         }
-        
+
         $src = [
             'version' => 'v1',
             'reqPolicy' => $policy,
@@ -230,7 +230,7 @@ class Timestamp
         if (!$nonce) {
             $nonce = null;
         }
-        
+
         $src = [
             'version' => 'v1',
             'reqPolicy' => $policy,
